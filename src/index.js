@@ -1,3 +1,12 @@
+// steps after databse connection 
+// in app.js 
+// we create async handler in utils
+// apierror.js in utils
+
+
+
+
+
 // require('dotenv').config ({path:'./env'})
 import dotenv from "dotenv"
 
@@ -12,6 +21,21 @@ dotenv.config({
 })
 
 connectDB()
+.then(()=>{
+    app.listen(process.env.PORT || 8000,()=>{
+        console.log(`Server is running at Port ${process.env.PORT}`);
+        app.on("error",(error)=>{
+            console.log("ERROR:",error);
+            throw error
+            
+         })
+    })
+})
+.catch((err)=>{
+    console.log("MongoDb connection failed!!!",err);
+
+    
+})
 
 
 /*
@@ -21,7 +45,7 @@ const app=express()
 ;( async ()=>{
     try {
      await   mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`)
-     application.on("error",(error)=>{
+     app.on("error",(error)=>{
         console.log("ERROR:",error);
         throw error
         

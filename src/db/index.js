@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { DB_NAME } from "../constants.js";
-console.log("hello");
+
 
 
 const connectDB=async()=>{

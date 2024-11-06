@@ -25,4 +25,15 @@ app.use(express.urlencoded({extended:true,
 // folder jha static files wagera store krwani ho
 app.use(express.static("public"))
 app.use(cookieParser())
+
+
+// router import 
+import userRouter from "./routes/user.routes.js"
+
+
+// routes declartion 
+// routes or controller ek jgah pe ni hn isliye inke liye middleware lana pdega to app.get use ni kr skte direct
+
+app.use("/api/v1/users",userRouter)
+// http://localhost:8000/api/v1/users/register
 export {app}

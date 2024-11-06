@@ -5,6 +5,15 @@
 // api response hme express se milega isliye uske liye alg se
 // apiresponse.js file
 // models
+// utils->cloudinary 
+// middlewares->multer
+// controller->user.controller
+// routes->routes.js
+// postman download for server
+// ab register user m hm frontend se request le re hn
+// to hme file handling ke liye multer ka use krna pdega 
+// uske liye hnm user.routes m upload import krenge 
+
 
 
 
@@ -18,9 +27,10 @@ import mongoose from "mongoose"
 import { DB_NAME } from "./constants.js";
 import connectDB from "./db/index.js";
 import { config } from "dotenv";
+import {app} from './app.js'
 
 dotenv.config({
-    path:'./env'
+    path:'./.env'
 })
 
 connectDB()

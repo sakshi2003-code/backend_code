@@ -18,6 +18,8 @@
 // fir logout ke liye phle middleware auth.middleware.js
 // routes m logout ke liye route add
 // endpoint for user refeshtoken in user.controller.js
+// add subsription.model.js in models
+// controllers for updation password , email,username ,images
 
 
 

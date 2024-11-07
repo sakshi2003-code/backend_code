@@ -13,6 +13,12 @@
 // ab register user m hm frontend se request le re hn
 // to hme file handling ke liye multer ka use krna pdega 
 // uske liye hnm user.routes m upload import krenge 
+// user.conroller m register ke liye method
+// fir login ke liye method
+// fir logout ke liye phle middleware auth.middleware.js
+// routes m logout ke liye route add
+// endpoint for user refeshtoken in user.controller.js
+
 
 
 

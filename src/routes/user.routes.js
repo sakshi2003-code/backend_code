@@ -43,12 +43,13 @@ router.route("/refresh-token").post(refreshAccessToken)
 router.route("/change-password").post(verifyJWT,changeCurrentPassword)
 router.route("/current-user").get(verifyJWT,getCurrentUser)
 router.route("/update-account").patch(verifyJWT,updateAccountDetails)
+// PATCH allows us to update only specific fields (like avatar) without affecting other parts of the resource. 
 
 router.route("/update-avatar").patch(verifyJWT,upload.single("avatar"),updateUserAvatar) //isme ek file b aaegi isliye upload multer use kr rkha
 
 router.route("/update-cover_image").patch(verifyJWT,upload.single("coverImage"),updateUserCoverImage)
 
 router.route("/c/:username").get(verifyJWT,getUserChhanelProfile) //isme hmne data params se le rkha isliye
-
+// /c/:username dynamically accept form different user
 router.route("/history").get(verifyJWT,getWatchHistory)
 export default router;
